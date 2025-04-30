@@ -306,14 +306,14 @@ function ProductList() {
                 <div className="product-grid">
                     {plantsArray.map((category, index) => (
                         <div key={index}>
-                            <h1><div>{category.category}</div></h1>
+                            <h1 className="plantname_heading"><div className="plant_heading">{category.category}</div></h1>
                             <div className="product-list">
                                 {category.plants.map((plant, plantIndex) => (
                                     <div className="product-card" key={plantIndex}>
-                                        <img src={plant.image} alt={plant.name} className="product-image" />
                                         <div className="product-title">{plant.name}</div>
-                                        <div className="product-description"><p>{plant.description}</p></div>
-                                        <div className="product-cost"><b>{plant.cost}</b></div>
+                                        <img src={plant.image} alt={plant.name} className="product-image" />
+                                        <div className="product-price">{plant.cost}</div>
+                                        <div className="product-description">{plant.description}</div>
                                         <button
                                             className={`product-button ${addedToCart[plant.name] ? 'added-to-cart' : ''}`}
                                             onClick={() => handleAddToCart(plant)}
